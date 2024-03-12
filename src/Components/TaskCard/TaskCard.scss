@@ -1,0 +1,39 @@
+.taskCard__container{
+    display: flex;
+    margin: 1rem;
+    gap: 1rem;
+}
+
+.taskCard__container__card{
+    position: relative;
+    border: 1px solid;
+    width: 40%;
+    word-wrap: break-word;
+    border-radius: 1rem;
+    padding: 1rem;
+
+    span{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .taskCard__container__card__icon__top{
+        display: flex;
+        gap: 0.5rem;
+        position: absolute;
+        right: 5px;
+        top:5px;
+    }
+
+    .taskCard__container__card__icon__bottom{
+        display: flex;
+        gap: 0.5rem;
+        position: absolute;
+        right: 5px;
+        bottom:5px;
+
+    }
+}
+
+

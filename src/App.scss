@@ -1,0 +1,46 @@
+
+@import './Styles/global';
+
+.container{
+  display: flex;
+ 
+}
+
+.container__leftSection{
+  border: 1px solid;
+  height: 100vh;
+  width: 20vw;
+  padding: 0.1rem;
+
+  .container__leftSection_wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  
+    span{
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: 2px solid saddlebrown;
+    }
+  }
+}
+
+
+
+.container__rightSection{
+
+  display: flex;
+  width: 80vw;
+
+  .container__rightSection__mainMenu{
+    width: 100%;
+  }
+
+  .container__rightSection__topMenu{
+    border: 1px solid black;
+    height: 8vh;
+  }
+
+}

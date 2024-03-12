@@ -1,0 +1,23 @@
+
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+
+
+.button {
+    cursor: pointer;
+    border: none;
+    background-color: $primary-color;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+  
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px lighten($primary-color, 30%);
+    }
+  }
+  
