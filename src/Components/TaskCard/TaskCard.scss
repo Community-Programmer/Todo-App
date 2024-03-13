@@ -1,7 +1,11 @@
 .taskCard__container{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 1rem;
     gap: 1rem;
+    border: 2px solid;
+    overflow: auto;
 }
 
 .taskCard__container__card{
@@ -11,6 +15,45 @@
     word-wrap: break-word;
     border-radius: 1rem;
     padding: 1rem;
+    background-color: rgb(248, 244, 244);
+    box-shadow: 5px 5px 12px rgb(211, 215, 216);;
+
+    .category::before{
+        content: '';
+        width: 8px;
+        height: 8px;
+        margin: 5px;
+        border-radius: 50%;
+    }
+
+    .category.personal::before {
+        background-color:  rgb(255, 11, 11);
+    }
+    
+    .category.work::before {
+        background-color: #333333;
+    }
+    
+    .category.home::before {
+        background-color: #27ae60;
+    }
+    
+    .category.finance::before {
+        background-color: #ffd700;
+    }
+
+    .category.social::before {
+        background-color: #ff5733;
+    }
+
+    .category.travel::before {
+        background-color: #2980b9;
+    }
+
+    .category.school-study::before {
+        background-color: rgb(134, 2, 134);
+    }
+    
 
     span{
         display: flex;

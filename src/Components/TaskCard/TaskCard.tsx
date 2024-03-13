@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { Todo } from "../../Models/Todo";
 import "./TaskCard.scss";
 
@@ -22,6 +22,7 @@ const TaskCard: React.FC<Props> = ({
   category,
   isCompleted,
 }) => {
+
   const {
     isPaneOpen,
     setIsPaneOpen,
@@ -32,6 +33,9 @@ const TaskCard: React.FC<Props> = ({
     todos,
     setTodos,
   } = useContext(AppContext) as TodoContextType;
+
+  const Color = useRef<HTMLSpanElement>(null);
+
 
   const deleteTask = (id: number) => {
     setTodos(todos.filter((todo) => todo.id !== id));
@@ -60,7 +64,7 @@ const TaskCard: React.FC<Props> = ({
       <div className="taskCard__container__card">
         <h3>{title}</h3>
         <p>{description}</p>
-        <span>{category}</span>
+        <span ref={Color} className={`category ${category.toLowerCase()}`}>{category}</span>
 
         <div className="taskCard__container__card__icon__top">
           {isCompleted ? (

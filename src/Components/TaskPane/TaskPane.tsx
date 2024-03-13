@@ -1,6 +1,5 @@
-import React, { ChangeEvent, useContext, useState } from "react";
+import React, { ChangeEvent, useContext } from "react";
 import "./TaskPane.scss";
-import { Todo } from "../../Models/Todo";
 import AppContext, { TodoContextType } from "../../Context/AppContext/context";
 
 const TaskPane: React.FC = () => {
@@ -21,7 +20,7 @@ const TaskPane: React.FC = () => {
       title: "",
       description: "",
       date: new Date(),
-      category: "General",
+      category: "Personal",
       isCompleted: false,
     });
   };
@@ -103,7 +102,7 @@ const TaskPane: React.FC = () => {
           <option value="Finance">Finance</option>
           <option value="Social">Social</option>
           <option value="Travel">Travel</option>
-          <option value="School/Study">School/Study</option>
+          <option value="School-Study">School-Study</option>
         </select>
 
         <label htmlFor="tags">Tags</label>
