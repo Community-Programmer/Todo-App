@@ -1,27 +1,29 @@
+@import "./Styles/global";
 
-@import './Styles/global';
-
-.container{
+.container {
   display: flex;
- 
 }
 
-.container__leftSection{
+.container__leftSection {
   border: 1px solid;
   width: 20%;
   padding: 0.2rem;
-  
-  h1{
+
+  .closeSideNav{
+    display: none;
+  }
+
+  h1 {
     color: $primary-color;
   }
 
-  .container__leftSection_wrap{
+  .container__leftSection_wrap {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding: 0.5rem 0;
-  
-    span{
+
+    span {
       font-size: 1.1rem;
       display: flex;
       align-items: center;
@@ -29,18 +31,19 @@
   }
 }
 
-
-
-.container__rightSection{
-
+.container__rightSection {
   display: flex;
   width: 80vw;
 
-  .container__rightSection__mainMenu{
+  .container__rightSection__mainMenu {
     width: 100%;
+
+    .navMenu {
+      display: none;
+    }
   }
 
-  .container__rightSection__topMenu{
+  .container__rightSection__topMenu {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,9 +52,48 @@
     height: 8vh;
   }
 
-  .container__rightSection__subMenu{
+  .container__rightSection__subMenu {
     height: 89vh;
     overflow: auto;
   }
+}
 
+@media screen and (max-width: 768px) {
+  .container__leftSection {
+    position: absolute;
+    background-color: white;
+    width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    border: none;
+    overflow: hidden;
+    transition: width 0.2s ease-in-out;
+
+    .closeSideNav{
+      display: block;
+    }
+  }
+
+  .container__leftSection.openSideNav {
+    width: 100%;
+  }
+
+  .container__rightSection {
+    width: 100vw;
+  }
+
+  
+  .container__rightSection__topMenu {
+    font-size: 0.9rem;
+  }
+
+  .container__rightSection__mainMenu {
+    .navMenu {
+      display: block !important;
+    }
+  }
 }

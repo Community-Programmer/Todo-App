@@ -63,7 +63,7 @@ const TaskPane: React.FC = () => {
 
   return (
     <div className={`tasKPane__container ${isPaneOpen ? "openPane" : ""}`}>
-      <FaXmark onClick={()=>{setIsPaneOpen(!isPaneOpen); resetForm()}}/>
+      <FaXmark  className="closeSideNav" onClick={()=>{setIsPaneOpen(!isPaneOpen); resetForm()}}/>
                            
       <h2>Add Task</h2>
       <form onSubmit={(event) => handleSubmit(event, todo.id)}>
