@@ -77,11 +77,13 @@ const App: React.FC = () => {
 
             </div>
 
+
             
 
             <div className="container__rightSection__subMenu">
               
     <div className="taskCard__container">
+            {DayTask === 0 ? <h1>No task added!!</h1>: ''}
               {todos
                 .filter(
                   (todo) =>
