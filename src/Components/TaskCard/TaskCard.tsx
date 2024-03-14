@@ -6,11 +6,13 @@ import { CiEdit } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
 import AppContext, { TodoContextType } from "../../Context/AppContext/context";
 import { IoCheckmarkDone } from "react-icons/io5";
+import { format } from "date-fns";
 
 interface Props {
   id: number;
   title: string;
   description: string;
+  date:Date;
   category: string;
   isCompleted: Boolean;
 }
@@ -19,6 +21,7 @@ const TaskCard: React.FC<Props> = ({
   id,
   title,
   description,
+  date,
   category,
   isCompleted,
 }) => {
@@ -61,17 +64,24 @@ const TaskCard: React.FC<Props> = ({
 
   return (
     <>
-      <div className="taskCard__container__card">
+
+   
+      <div className={`taskCard__container__card ${isCompleted ? 'iscompleted' : ''}`}>
+        <span className="taskDate">{format(date, 'dd-MM-yyyy HH:mm')}</span>
+
+        <div className={` ${isCompleted ? 'taskCard__container__TaskcardInfo' : ''}`}>
         <h3>{title}</h3>
         <p>{description}</p>
+        </div>
+
         <span ref={Color} className={`category ${category.toLowerCase()}`}>{category}</span>
 
         <div className="taskCard__container__card__icon__top">
           {isCompleted ? (
-            <p>Completed</p>
+            <span className="completed">Completed</span>
           ) : (
             <span onClick={() => markAsComplete(id)}>
-              <IoCheckmarkDone fontSize={25} /> Mark as Complete
+              <IoCheckmarkDone fontSize = {25} /> Mark as Complete
             </span>
           )}
         </div>
@@ -88,6 +98,8 @@ const TaskCard: React.FC<Props> = ({
           
         </div>
       </div>
+  
+      
     </>
   );
 };

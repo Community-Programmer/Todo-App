@@ -8,21 +8,23 @@
 
 .container__leftSection{
   border: 1px solid;
-  height: 100vh;
-  width: 20vw;
-  padding: 0.1rem;
+  width: 20%;
+  padding: 0.2rem;
+  
+  h1{
+    color: $primary-color;
+  }
 
   .container__leftSection_wrap{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    padding: 0.5rem 0;
   
     span{
       font-size: 1.1rem;
       display: flex;
       align-items: center;
-      cursor: pointer;
-      border: 2px solid saddlebrown;
     }
   }
 }
@@ -39,8 +41,17 @@
   }
 
   .container__rightSection__topMenu{
-    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid black;
     height: 8vh;
+  }
+
+  .container__rightSection__subMenu{
+    height: 89vh;
+    overflow: auto;
   }
 
 }

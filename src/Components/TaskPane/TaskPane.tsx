@@ -2,6 +2,9 @@ import React, { ChangeEvent, useContext } from "react";
 import "./TaskPane.scss";
 import AppContext, { TodoContextType } from "../../Context/AppContext/context";
 
+import { FaXmark } from "react-icons/fa6";
+
+
 const TaskPane: React.FC = () => {
   const {
     isPaneOpen,
@@ -57,8 +60,11 @@ const TaskPane: React.FC = () => {
     resetForm();
   };
 
+
   return (
     <div className={`tasKPane__container ${isPaneOpen ? "openPane" : ""}`}>
+      <FaXmark onClick={()=>{setIsPaneOpen(!isPaneOpen); resetForm()}}/>
+                           
       <h2>Add Task</h2>
       <form onSubmit={(event) => handleSubmit(event, todo.id)}>
         <label htmlFor="task">Task</label>
@@ -68,6 +74,7 @@ const TaskPane: React.FC = () => {
           name="title"
           value={todo.title}
           onChange={(e) => handelChange(e)}
+          required
         />
 
         <label htmlFor="description">Description</label>
@@ -81,11 +88,12 @@ const TaskPane: React.FC = () => {
 
         <label htmlFor="date">Date</label>
         <input
-          type="date"
+          type="datetime-local"
           id="date"
           name="date"
           value={todo.date.toString()}
           onChange={(e) => handelChange(e)}
+          required
         />
 
         <label htmlFor="category">Category</label>
@@ -104,8 +112,6 @@ const TaskPane: React.FC = () => {
           <option value="Travel">Travel</option>
           <option value="School-Study">School-Study</option>
         </select>
-
-        <label htmlFor="tags">Tags</label>
 
         <div className="button__container">
           {!isEdit ? (

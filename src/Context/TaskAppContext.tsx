@@ -12,7 +12,7 @@ const TaskAppContext:React.FC<{children: React.ReactNode}> = ({ children }) => {
         title: '',
         description: '',
         date: new Date(),
-        category:'General',
+        category:'Personal',
         isCompleted: false
 
     });
