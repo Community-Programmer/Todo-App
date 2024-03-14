@@ -40,7 +40,7 @@ const App: React.FC = () => {
     if (todosList) {
      setTodos(todosList);
     }
-  }, []);
+  }, [setTodos]);
   
 
   return (

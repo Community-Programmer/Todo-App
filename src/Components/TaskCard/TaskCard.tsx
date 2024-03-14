@@ -1,7 +1,5 @@
 import React, { useContext, useRef } from "react";
-import { Todo } from "../../Models/Todo";
 import "./TaskCard.scss";
-
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
 import AppContext, { TodoContextType } from "../../Context/AppContext/context";
@@ -27,11 +25,8 @@ const TaskCard: React.FC<Props> = ({
 }) => {
 
   const {
-    isPaneOpen,
     setIsPaneOpen,
-    isEdit,
     setIsEdit,
-    todo,
     setTodo,
     todos,
     setTodos,
